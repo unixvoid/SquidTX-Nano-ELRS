@@ -1,48 +1,56 @@
 # SquidTX Nano
 
 SquidTX Nano is a small 2.4Ghz ELRS TX board. It features an ESP32-WROOM-32E and an SX1280
-and runs the stock ExpressLRS `DIY 2400 E28` target with modifications. An
-onboard TPS63802 buck-boost takes 1.3 V to 5.5 V and makes 3.3 V, so the board runs straight off a
-1S battery. I designed this to fit in a TBS Tango 2, but it'll work with anything.
+and runs the stock ExpressLRS `DIY 2400 E28` target. An onboard TPS63802 buck-boost takes
+1.3 V to 5.5 V and makes 3.3 V, so the board runs straight off a 1S battery. I designed
+this to fit in a TBS Tango 2, but it'll work with anything.
 
 The KiCad files, gerbers and photos are in this repo so you can build one.
 
 <p align="center">
+  <img src="docs/images/squidtx_nano.gif" width="50%" alt="Finished board in hand">
+  <br>
+  <em>Finished board, with the E28 module and its u.FL antenna</em>
+  <br><br>
   <img src="docs/images/squidtx_nano_front.jpg" width="24%" alt="Board, E28 side">
   <img src="docs/images/squidtx_nano_back.jpg" width="24%" alt="Board, ESP32 side">
   <img src="docs/images/squidtx_nano_pcb_front.jpg" width="24%" alt="Bare PCB, front">
   <img src="docs/images/squidtx_nano_pcb_back.jpg" width="24%" alt="Bare PCB, back">
   <br>
   <em>Part-assembled front (E28-2G4M27S and u.FL antenna), part-assembled back (ESP32-WROOM-32E), bare PCB front, bare PCB back</em>
+  <br><br>
+  <img src="docs/images/board-front.png" width="30%" alt="Front copper and silkscreen">
+  <img src="docs/images/board-back.png" width="30%" alt="Back copper and silkscreen">
+  <br>
+  <em>Copper and silkscreen: front (E28 side) and back (ESP32 side)</em>
 </p>
 
-KiCad renders and schematic: [front copper and silk](docs/images/board-front.png),
-[back copper and silk](docs/images/board-back.png), [schematic](docs/images/schematic.png).
+Full schematic: [docs/images/schematic.png](docs/images/schematic.png).
 
 ## Contents
 
 - [Features](#features)
 - [Specs](#specs)
-- [Block diagram](#block-diagram)
 - [Pin map](#pin-map)
 - [Power](#power)
 - [Connectors and wiring](#connectors-and-wiring)
 - [Bill of materials](#bill-of-materials)
 - [Firmware](#firmware)
 - [Flashing](#flashing)
-- [Assembly](#assembly)
 - [Manufacturing](#manufacturing)
 - [Repo layout](#repo-layout)
 - [License](#license)
 
 ## Features
 
-- Runs the stock ExpressLRS `DIY 2400 E28` target
+- Runs the stock ExpressLRS `DIY 2400 E28` target.
+- E28-2G4M27S does the RF: SX1280, PA and LNA, up to 27 dBm, with the PA and LNA enables driven by
   the firmware on IO26 and IO27.
 - TPS63802 buck-boost, 1.3 V to 5.5 V in, 3.3 V out at up to 2 A, so no second regulator is needed.
 - 20.0 x 35.5 mm, 2 layers, 1.6 mm FR-4, 0805 passives and a 1210 inductor.
 - 6-pin SquidGrip pad array for the first flash and for recovery.
 - Optional 2-pin fan header on IO17, which is the target's `misc_fan_en`.
+
 ## Specs
 
 | Item | Value |
@@ -104,6 +112,7 @@ Not connected: `SENSOR_VP/VN`, IO34, IO35, IO32, IO33, IO25, IO12, IO15, IO16, I
 | 6 | NSS_CTS | `NSS_CTS/IO5` | 14 | DIO2 | not connected |
 | 7 | GND | `GND` | 15 | DIO3 | not connected |
 | 8 | RX_EN | `RX_EN/IO27` | 16 | GND | `GND` |
+
 ## Power
 
 U2 is a TPS63802 buck-boost. It takes the raw battery rail (1.3 V to 5.5 V) and makes the 3.3 V rail
@@ -177,6 +186,7 @@ Tag-Connect. I will release its design files separately.
 | R3 | 56 kΩ | 0805 | feedback divider, top |
 | R4 | 10 kΩ | 0805 | feedback divider, bottom |
 | - | 2.4 GHz antenna and u.FL pigtail | external | not on the PCB. The E28 needs an antenna on its u.FL (this build uses a Seeed Studio XIAO FPC Antenna A-01) |
+
 ## Firmware
 
 This board runs a stock ExpressLRS target. There is no custom target and no `user_defines` to set.
@@ -257,6 +267,7 @@ Everything you need to order the board is in `hardware/`:
 ├── LICENSE                      # CERN-OHL-S-2.0
 ├── docs/
 │   └── images/
+│       ├── squidtx_nano.gif            # gif, finished board in hand
 │       ├── squidtx_nano_front.jpg      # photo, board front (E28 side)
 │       ├── squidtx_nano_back.jpg       # photo, board back (ESP32 side)
 │       ├── squidtx_nano_pcb_front.jpg  # photo, bare PCB front
