@@ -165,9 +165,10 @@ whatever radio you are using. J2 is optional, and SG1 is only for flashing.
 
 J1 and J2 are 2.54 mm through-hole headers on the front. SG1 is a 1.27 mm 2x3 pad array that mates
 with a SquidGrip probe. The SquidGrip is a USB-UART probe I designed around a CP2102N, with the ESP32
-auto-reset circuit on it (DTR to EN, RTS to IO0). It is a thin PCB tongue that screws into a
-chip-clip style clamp so you can snap it onto a bare board, and it is a cheap alternative to
-Tag-Connect. I will release its design files separately.
+auto-reset circuit on it (DTR to EN, RTS to IO0). It is a thin PCB tongue that clamps onto a bare
+board with an alligator clip style grip, and it is a cheap alternative to Tag-Connect. Its design
+files are in the [SquidGrip repo](https://github.com/unixvoid/squidgrip), and the pad array on its own
+is here as `hardware/squidgrip_pogo_2x03_P1.27mm.kicad_mod`.
 
 ## Bill of materials
 
@@ -256,6 +257,7 @@ Everything you need to order the board is in `hardware/`:
 | `hardware/squidtx_nano.kicad_pcb` | PCB layout |
 | `hardware/manufacturing/squidtx_nano-v1-gerbers.zip` | gerber and drill package, ready to upload |
 | `hardware/manufacturing/gerbers/` | the same files unpacked (F and B Cu, mask, paste, silk, Edge_Cuts, drill, job) |
+| `hardware/squidgrip_pogo_2x03_P1.27mm.kicad_mod` | the 6-pin SquidGrip pad array on its own, for your own boards |
 | `docs/images/` | photos, renders and the schematic image used here |
 
 
@@ -279,6 +281,7 @@ Everything you need to order the board is in `hardware/`:
     ├── squidtx_nano.kicad_pro   # KiCad project
     ├── squidtx_nano.kicad_sch   # schematic
     ├── squidtx_nano.kicad_pcb   # PCB layout
+    ├── squidgrip_pogo_2x03_P1.27mm.kicad_mod   # the 6-pin SquidGrip pad array
     └── manufacturing/
         ├── squidtx_nano-v1-gerbers.zip
         └── gerbers/             # unpacked gerbers and drill files
