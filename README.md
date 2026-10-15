@@ -23,6 +23,10 @@ The KiCad files, gerbers and photos are in this repo so you can build one.
   <img src="docs/images/board-back.png" width="30%" alt="Back copper and silkscreen">
   <br>
   <em>Copper and silkscreen: front (E28 side) and back (ESP32 side)</em>
+  <br><br>
+  <img src="docs/images/squidtx_nano_installed.jpg" width="60%" alt="Board installed inside the radio, between the gimbals">
+  <br>
+  <em>Installed between the gimbals, with the three wires out to the module bay</em>
 </p>
 
 Full schematic: [docs/images/schematic.png](docs/images/schematic.png).
@@ -274,6 +278,7 @@ Everything you need to order the board is in `hardware/`:
 │       ├── squidtx_nano_back.jpg       # photo, board back (ESP32 side)
 │       ├── squidtx_nano_pcb_front.jpg  # photo, bare PCB front
 │       ├── squidtx_nano_pcb_back.jpg   # photo, bare PCB back
+│       ├── squidtx_nano_installed.jpg  # photo, board installed in the radio
 │       ├── board-front.png             # KiCad render, front copper and silk
 │       ├── board-back.png              # KiCad render, back copper and silk
 │       └── schematic.png               # schematic image
